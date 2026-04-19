@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SkillSphere Lite – A peer-to-peer skill matching platform. Find people who can teach what you want to learn." />
+  <title>SkillSphere Lite – Skill Match Platform</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts: Inter for modern typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== HERO / HEADER ===== -->
+  <header class="hero">
+    <div class="hero-bg-orb hero-bg-orb--1"></div>
+    <div class="hero-bg-orb hero-bg-orb--2"></div>
+    <div class="hero-bg-orb hero-bg-orb--3"></div>
+    <div class="hero-content">
+      <div class="logo">
+        <span class="logo-icon">◈</span>
+        <span class="logo-text">SkillSphere<span class="logo-lite">Lite</span></span>
+      </div>
+      <h1>Find Your Skill Match</h1>
+      <p class="hero-subtitle">Share what you know, learn what you need — connect with people whose skills complement yours.</p>
+    </div>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="container">
+
+    <!-- ── Add User Form ── -->
+    <section class="section" id="add-user-section">
+      <div class="section-header">
+        <span class="section-icon">✦</span>
+        <h2>Join the Sphere</h2>
+        <p class="section-desc">Enter your name, the skills you can teach, and the skills you want to learn.</p>
+      </div>
+
+      <form id="user-form" class="glass-card form-card" autocomplete="off">
+        <div class="form-group">
+          <label for="input-name">Your Name</label>
+          <input type="text" id="input-name" placeholder="e.g. Alex Johnson" required />
+        </div>
+        <div class="form-group">
+          <label for="input-offered">Skills You Can Teach <span class="label-hint">(comma separated)</span></label>
+          <input type="text" id="input-offered" placeholder="e.g. Python, Guitar, Cooking" required />
+        </div>
+        <div class="form-group">
+          <label for="input-wanted">Skills You Want to Learn <span class="label-hint">(comma separated)</span></label>
+          <input type="text" id="input-wanted" placeholder="e.g. Singing, React, Photography" required />
+        </div>
+        <button type="submit" id="btn-submit" class="btn-primary">
+          <span class="btn-text">Add Me to SkillSphere</span>
+          <span class="btn-loader" hidden>
+            <span class="spinner"></span> Saving…
+          </span>
+        </button>
+      </form>
+    </section>
+
+    <!-- ── All Users Section ── -->
+    <section class="section" id="users-section">
+      <div class="section-header">
+        <span class="section-icon">◉</span>
+        <h2>All Members</h2>
+        <p class="section-desc">Everyone registered on the platform.</p>
+        <button id="btn-refresh" class="btn-secondary" title="Refresh user list">⟳ Refresh</button>
+      </div>
+      <div id="users-grid" class="card-grid">
+        <!-- user cards injected here -->
+        <p class="empty-state" id="users-empty">No members yet. Be the first to join!</p>
+      </div>
+    </section>
+
+    <!-- ── Matches Section ── -->
+    <section class="section" id="matches-section">
+      <div class="section-header">
+        <span class="section-icon">⬡</span>
+        <h2>Skill Matches</h2>
+        <p class="section-desc">Users whose offered skills match another user's wanted skills.</p>
+      </div>
+      <div id="matches-grid" class="card-grid">
+        <p class="empty-state" id="matches-empty">No matches found yet. Add more members to see matches!</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>Built with ♥ — SkillSphere Lite &copy; 2026</p>
+  </footer>
+
+  <!-- ===== Toast container for notifications ===== -->
+  <div id="toast-container"></div>
+
+  <!-- Supabase JS via CDN (v2) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <!-- App Logic -->
+  <script src="script.js"></script>
+</body>
+</html>
