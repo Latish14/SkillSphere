@@ -15,7 +15,7 @@
 // You can find them at: https://app.supabase.com → Settings → API
 // ─────────────────────────────────────────────
 const SUPABASE_URL = 'https://izzfbzuhcglvcqiolrea.supabase.co';       // e.g. https://xyzabc.supabase.co
-const SUPABASE_KEY = 'sb_publishable_MlHrbBaa-e1z-_IuJAFmsg_y6TIBeM7';  // e.g. eyJhbGci...
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml6emZienVoY2dsdmNxaW9scmVhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY1ODUxNzQsImV4cCI6MjA5MjE2MTE3NH0.PB9B47280MatjIiGhOIFvmrT6P_iEpA7tEgZAx2WK_s';  // e.g. eyJhbGci...
 
 // Initialize the Supabase client
 const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
